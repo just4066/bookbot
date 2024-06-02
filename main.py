@@ -15,14 +15,13 @@ def count_caracters(text):
     dict_of_caracters = {}
     
     for word in list_of_words:
-        if word.isalpha() == True:
-            lowered_word = word.lower()
-            
-            for caracter in lowered_word:
-                if caracter in dict_of_caracters:
-                    dict_of_caracters[caracter] += 1
-                else:
-                    dict_of_caracters[caracter] = 1
+        lowered_word = word.lower()
+        
+        for caracter in lowered_word:
+            if caracter in dict_of_caracters:
+                dict_of_caracters[caracter] += 1
+            else:
+                dict_of_caracters[caracter] = 1
 
     return dict_of_caracters
 
@@ -39,6 +38,7 @@ def print_report(text_path):
     print(f"{words_count} words in the document\n\n")
     
     for caracter, count in sorted_caracters:
-      print(f"The caracter '{caracter}' was found {count} times")
+        if caracter.isalpha():
+            print(f"The caracter '{caracter}' was found {count} times")
       
 main()
