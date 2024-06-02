@@ -37,8 +37,10 @@ def print_report(text_path):
     print(f"--- Begin report of {text_path} ---")
     print(f"{words_count} words in the document\n\n")
     
-    for caracter, count in sorted_caracters:
-        if caracter.isalpha():
-            print(f"The caracter '{caracter}' was found {count} times")
+    for character, count in sorted_caracters:
+        if character.isalpha():
+            print(f"The '{character}' character was found {count} times")
+    
+    print("--- End report ---")
       
 main()
